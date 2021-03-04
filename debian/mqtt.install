@@ -1,0 +1,3 @@
+target/mqtt /opt/peramic-app/
+webapp/www /opt/peramic-app/
+examples /opt/peramic-app

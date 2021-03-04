@@ -1,0 +1,5 @@
+# Eclipse Mosquitto™ - An open source MQTT broker https://mosquitto.org/
+# Example Password File
+
+# user:password
+roger:rabbit

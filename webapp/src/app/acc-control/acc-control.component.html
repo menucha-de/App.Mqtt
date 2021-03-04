@@ -1,0 +1,36 @@
+<mica-expandable label="Access Control" [group]="group">
+  <div class="content">
+    <div class="form-group">
+      <label>Allow Anonymous</label>
+      <mica-switch [(ngModel)]="allowAnonymous" (change)="updateAccess()"></mica-switch>
+    </div>
+    <div class="form-group">
+      <label>Access Control File</label>
+      <mica-action-button labelWidth="8.8em" [expandable]=false unexciting=true>
+        <img class="icon smallimg" [src]="iconFile">
+        <mica-action-button-item icon="assets/images/import.png" (click)="acUploader.click()" class="action" label="Import">
+        </mica-action-button-item>
+        <mica-action-button-item icon="assets/images/export.png" (click)="exportAcFile()" class="action" label="Export">
+        </mica-action-button-item>
+        <mica-action-button-item icon="assets/images/delete.png" [disabled]="btnDisabled" (click)="deleteAcFile()" class="action"
+          label="Delete">
+        </mica-action-button-item>
+      </mica-action-button>
+      <input #acUploader type="file" class="notshown" (change)="importAcFile($event.target.files)">
+    </div>
+    <div class="form-group">
+      <label>Password File</label>
+      <mica-action-button labelWidth="8.8em" [expandable]=false unexciting=true>
+        <img class="icon smallimg" [src]="iconPass">
+        <mica-action-button-item icon="assets/images/import.png" (click)="passUploader.click()" class="action" label="Import">
+        </mica-action-button-item>
+        <mica-action-button-item icon="assets/images/export.png" (click)="exportPassFile()" class="action" label="Export">
+        </mica-action-button-item>
+        <mica-action-button-item icon="assets/images/delete.png" [disabled]="btnPassDisabled" (click)="deletePassFile()"
+          class="action" label="Delete">
+        </mica-action-button-item>
+      </mica-action-button>
+      <input #passUploader type="file" class="notshown" (change)="importPassFile($event.target.files)">
+    </div>
+  </div>
+</mica-expandable>

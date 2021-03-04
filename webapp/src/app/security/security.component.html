@@ -1,0 +1,58 @@
+<mica-expandable label="Security" [group]="group">
+
+<div class="content">
+  <div class="form-group">
+    <label>SSL/TLS</label>
+
+    <mica-switch (change)="updateSSL()" [(ngModel)]="ssl" [disabled]="btnCaDisabled || btnServDisabled"></mica-switch>
+  </div>
+  <div class="form-group">
+    <label>CA Certificate</label>
+    <mica-action-button labelWidth="8.8em" [expandable]=false unexciting=true>
+      <img class="icon smallimg" [src]="iconCaFile">
+      <mica-action-button-item icon="assets/images/import.png" (click)="uploaderCa.click()" class="action" label="Import">
+      </mica-action-button-item>
+
+      <mica-action-button-item icon="assets/images/delete.png" [disabled]="btnCaDisabled" (click)="deleteCaFile()" class="action"
+        label="Delete">
+      </mica-action-button-item>
+    </mica-action-button>
+    <input #uploaderCa type="file" class="notshown" (change)="importCaFile($event.target.files)">
+  </div>
+  <div class="form-group">
+    <label>Server Certificate</label>
+
+    <input type="password" micaInput class="left" placeholder="Passphrase..." [(ngModel)]="pass" (blur)="onBlurMethod()">
+  </div>
+  <div class="form-group">
+    <label></label>
+    <mica-action-button labelWidth="8.8em" [expandable]=false unexciting=true>
+      <img class="icon smallimg" [src]="iconServFile">
+      <mica-action-button-item icon="assets/images/import.png" [disabled]="pass==''" (click)="uploaderServ.click()" class="action"
+        label="Import">
+      </mica-action-button-item>
+      <mica-action-button-item icon="assets/images/delete.png" [disabled]="btnServDisabled" (click)="deleteServFile()"
+        class="action" label="Delete">
+      </mica-action-button-item>
+    </mica-action-button>
+    <input #uploaderServ type="file" class="notshown" (change)="importServFile($event.target.files)">
+
+  </div>
+  <div class="form-group">
+    <label>Revocation List</label>
+    <mica-action-button labelWidth="8.8em" [expandable]=false unexciting=true>
+      <img class="icon smallimg" [src]="iconRevFile">
+      <mica-action-button-item icon="assets/images/import.png" (click)="uploaderRev.click()" class="action" label="Import">
+      </mica-action-button-item>
+      <mica-action-button-item icon="assets/images/delete.png" [disabled]="btnRevDisabled" (click)="deleteRevFile()" class="action"
+        label="Delete">
+      </mica-action-button-item>
+    </mica-action-button>
+    <input #uploaderRev type="file" class="notshown" (change)="importRevFile($event.target.files)">
+  </div>
+  <div class="form-group">
+    <label>Client Verification</label>
+    <mica-switch (change)="updateSSL()" [(ngModel)]="clientVerification" id="clientVerification"></mica-switch>
+  </div>
+</div>
+</mica-expandable>

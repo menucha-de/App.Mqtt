@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+label {
+  width: 10em;
+}
+.notshown {
+  display: none;
+}
+.form-group {
+  padding-top: 0.5em;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.smallimg {
+  width: 32px;
+}
+.icon {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}

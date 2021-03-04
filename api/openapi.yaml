@@ -1,0 +1,345 @@
+openapi: 3.0.0
+info:
+  description: Mqtts service
+  title: Mqtts API
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /accesscontrol:
+    get:
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessControl'
+          description: object returned.
+        500:
+          description: Unexpected error occured
+      summary: returns AccessControl object
+      x-accepts: application/json
+    put:
+      operationId: putaccesscontrol
+      requestBody:
+        content:
+          application/json:
+              schema:
+                $ref: '#/components/schemas/AccessControl'
+      responses:
+        204:
+          description: accesscontrol set.
+        415:
+          description: Unsupported Media Type
+        422:
+          description: Empty content not allowed
+        500:
+          description: Unexpected error occured
+      summary: set access control
+      x-contentType: application/json
+      x-accepts: application/json
+  /accesscontrol/acfile:
+    delete:
+      operationId: deleteacfile
+      responses:
+        204:
+          description: File deleted
+        500:
+          description: Unexpected error occured
+      summary: Deletes AccessControl file
+      x-accepts: application/json
+    get:
+      operationId: getacfile
+      responses:
+        200:
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: AccessControl file returned.
+        404:
+          description: File not found
+        500:
+          description: Unexpected error occured
+      summary: returns AccessControl file
+      x-accepts: text/plain
+    head:
+      operationId: headacfile
+      responses:
+        204:
+          description: AccessControl file exists.
+        404:
+          description: File not found
+        500:
+          description: Unexpected error occured
+      summary: returns if Access Control file exists
+      x-accepts: application/json
+    put:
+      operationId: putacfile
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        204:
+          description: file uploaded.
+        415:
+          description: Unsupported Media Type
+        422:
+          description: Empty content not allowed
+        500:
+          description: Unexpected error occured
+      summary: upload AccessControl file
+      x-contentType: text/plain
+      x-accepts: application/json
+  /accesscontrol/passwordfile:
+    delete:
+      operationId: deletepassfile
+      responses:
+        204:
+          description: File deleted
+        500:
+          description: Unexpected error occured
+      summary: Deletes Password file
+     
+    get:
+      operationId: getpassfile
+      responses:
+        200:
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: password file returned.
+        404:
+          description: File not found
+        500:
+          description: Unexpected error occured
+      summary: returns Password file
+      x-accepts: text/plain
+    head:
+      operationId: headpassfile
+      responses:
+        204:
+          description: Password file exists.
+        404:
+          description: File not found
+        500:
+          description: Unexpected error occured
+      summary: returns if Password file exists
+     
+    put:
+      operationId: putpassfile
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        204:
+          description: file uploaded.
+        415:
+          description: Unsupported Media Type
+        422:
+          description: Empty content not allowed
+        500:
+          description: Unexpected error occured
+      summary: upload Password file
+      x-contentType: text/plain
+      x-accepts: application/json
+  /security:
+    get:
+      operationId: securityget
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Security'
+          description: object returned.
+        500:
+          description: Unexpected error occured
+      summary: returns Security object
+      x-accepts: application/json
+    put:
+      operationId: securityset
+      requestBody:
+        content:
+          application/json:
+              schema:
+                $ref: '#/components/schemas/Security'
+      responses:
+        204:
+          description: security set.
+        415:
+          description: Unsupported Media Type
+        422:
+          description: Empty content not allowed
+        500:
+          description: Unexpected error occured
+      summary: set security
+      x-contentType: application/json
+      x-accepts: application/json
+  /security/trust:
+    delete:
+      operationId: deletecafile
+      responses:
+        204:
+          description: File deleted
+        500:
+          description: Unexpected error occured
+      summary: Deletes CA Certificate file
+      x-accepts: application/json
+    head:
+      operationId: getcertfile
+      responses:
+        204:
+          description: File exists.
+        404:
+          description: File not found
+        500:
+          description: Unexpected error occured
+      summary: returns if Ca Certificate file exists
+      x-accepts: application/json
+    put:
+      operationId: putcertfile
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        204:
+          description: file uploaded.
+        415:
+          description: Unsupported Media Type
+        422:
+          description: Empty content not allowed
+        500:
+          description: Unexpected error occured
+      summary: upload CA Certificate file
+      x-contentType: text/plain
+      x-accepts: application/json
+  /security/keystore:
+    delete:
+      operationId: deleteservfile
+      responses:
+        204:
+          description: File deleted
+        500:
+          description: Unexpected error occured
+      summary: Deletes Server Certificate file
+      x-accepts: application/json
+    head:
+      operationId: getservfile
+      responses:
+        204:
+          description: File exists.
+        404:
+          description: File not found
+        500:
+          description: Unexpected error occured
+      summary: returns if Server Certificate file exists
+      x-accepts: application/json
+    put:
+      operationId: putservfile
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        204:
+          description: file uploaded.
+        415:
+          description: Unsupported Media Type
+        422:
+          description: Empty content not allowed
+        500:
+          description: Unexpected error occured
+      summary: upload Server Certificate file
+      x-contentType: text/plain
+
+  /security/revoclist:
+    delete:
+      operationId: deleterevfile
+      responses:
+        204:
+          description: File deleted
+        500:
+          description: Unexpected error occured
+      summary: Deletes Revocation List file
+    head:
+      operationId: getrevfile
+      responses:
+        204:
+          description: File exists.
+        404:
+          description: File not found
+        500:
+          description: Unexpected error occured
+      summary: returns if Revocation List file exists
+      x-accepts: application/json
+    put:
+      operationId: putrevfile
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        204:
+          description: file uploaded.
+        415:
+          description: Unsupported Media Type
+        422:
+          description: Empty content not allowed
+        500:
+          description: Unexpected error occured
+      summary: upload Revocation List file
+      x-contentType: text/plain
+      x-accepts: application/json
+  /security/passphrase:
+    put:
+      operationId: putpassphrase
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        204:
+          description: passphrase set.
+        415:
+          description: Unsupported Media Type
+        422:
+          description: Empty content not allowed
+        500:
+          description: Unexpected error occured
+      summary: set passphrase
+      x-contentType: text/plain
+components:
+  schemas:
+    AccessControl:
+      description: Access Control interface
+      example:
+        anonymous: true
+      properties:
+        anonymous:
+          description: allow anonymous access
+          type: boolean
+      type: object
+    Security:
+      description: SSL interface
+      example:
+        clientVerification: true
+        SSL: true
+      properties:
+        SSL:
+          description: Indicate if SSl is Enabled or not
+          type: boolean
+        clientVerification:
+          description: Indicates if Client verification is enabled or not
+          type: boolean
+      type: object
