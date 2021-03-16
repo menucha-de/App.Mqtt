@@ -11,9 +11,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/peramic/utils"
+	"github.com/menucha-de/utils"
 
-	loglib "github.com/peramic/logging"
+	loglib "github.com/menucha-de/logging"
 )
 
 const filename = "./conf/mqtt/config.json"

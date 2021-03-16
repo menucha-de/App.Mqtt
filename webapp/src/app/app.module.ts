@@ -5,8 +5,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { MicaControlsModule } from '@peramic/controls';
-import { MicaAppBaseModule, MicaAppComponentsModule } from '@peramic/shared';
+import { MicaControlsModule } from '@menucha-de/controls';
+import { MicaAppBaseModule, MicaAppComponentsModule } from '@menucha-de/shared';
 import { AccControlComponent } from './acc-control/acc-control.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';

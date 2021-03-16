@@ -12,7 +12,7 @@ import (
 	"strings"
 
 	"github.com/gorilla/mux"
-	utils "github.com/peramic/utils"
+	utils "github.com/menucha-de/utils"
 )
 
 //NewRouter create anew Router

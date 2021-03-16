@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { DataService } from '../data.service';
 import { saveAs } from 'file-saver';
 import { AccessControl } from '../model/accessControl';
-import { UtilService } from '@peramic/shared';
+import { UtilService } from '@menucha-de/shared';
 
 @Component({
   selector: 'app-acc-control',

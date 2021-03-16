@@ -11,10 +11,10 @@ import (
 	"syscall"
 	"time"
 
-	mqtt "github.com/peramic/App.Mqtt/mqtt"
+	mqtt "github.com/menucha-de/App.Mqtt/mqtt"
 
-	loglib "github.com/peramic/logging"
-	utils "github.com/peramic/utils"
+	loglib "github.com/menucha-de/logging"
+	utils "github.com/menucha-de/utils"
 )
 
 var log *loglib.Logger = loglib.GetLogger("mqtt")

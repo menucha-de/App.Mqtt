@@ -1,4 +1,4 @@
-module github.com/peramic/App.Mqtt
+module github.com/menucha-de/App.Mqtt
 
 go 1.14
 
@@ -8,8 +8,8 @@ require (
 	github.com/google/uuid v1.2.0 // indirect
 	github.com/gorilla/mux v1.8.0
 	github.com/mattn/go-sqlite3 v1.14.6 // indirect
-	github.com/peramic/logging v0.0.0-20210302152621-d412952d23c1
-	github.com/peramic/utils v0.0.0-20210302153209-51de1f683749
+	github.com/menucha-de/logging v0.0.0-20210315113139-fe4ac23b5e6d
+	github.com/menucha-de/utils v0.0.0-20210315113458-58b282a57797
 	github.com/sirupsen/logrus v1.8.0 // indirect
 	golang.org/x/crypto v0.0.0-20210220033148-5ea612d1eb83
 )

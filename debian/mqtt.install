@@ -1,3 +1,3 @@
-target/mqtt /opt/peramic-app/
-webapp/www /opt/peramic-app/
-examples /opt/peramic-app
+target/mqtt /opt/menucha-de/
+webapp/www /opt/menucha-de/
+examples /opt/menucha-de/

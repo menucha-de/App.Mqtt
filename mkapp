@@ -24,7 +24,7 @@ EXPOSE 1883
 EXPOSE 8883
 EXPOSE 9001
 EOF
-  finish '/opt/peramic-app' '["/opt/peramic-app/mqtt", "-p", "80"]'
+  finish '/opt/menucha-de' '["/opt/menucha-de/mqtt", "-p", "80"]'
   cat Dockerfile
 fi
 

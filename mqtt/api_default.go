@@ -21,18 +21,18 @@ import (
 	"net/http"
 	"os"
 
-	utils "github.com/peramic/utils"
+	utils "github.com/menucha-de/utils"
 
 	"golang.org/x/crypto/pkcs12"
 )
 
 var password string
 var acControlFilePath string = "/etc/mosquitto/ca_certificates/aclfile"
-var acControlFilePathEx string = "/opt/peramic-app/examples/aclfile.example"
+var acControlFilePathEx string = "/opt/menucha-de/examples/aclfile.example"
 var caCertificateFilePath string = "/etc/mosquitto/ca_certificates/cacertfile.crt"
 var passFilePath string = "/etc/mosquitto/ca_certificates/passfile"
-var passFilePathEx string = "/opt/peramic-app/examples/pskfile.example"
-var serverCertificateFilePath string = "/opt/peramic-app/conf/servercertfile"
+var passFilePathEx string = "/opt/menucha-de/examples/pskfile.example"
+var serverCertificateFilePath string = "/opt/menucha-de/conf/servercertfile"
 var revocationListFilePath string = "/etc/mosquitto/ca_certificates/serverrevlistfile"
 var serverKeyFile string = "/etc/mosquitto/certs/key.pem"
 var serverCertificateFile string = "/etc/mosquitto/certs/cert.pem"
